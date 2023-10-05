@@ -2,9 +2,9 @@ import { faker } from "@faker-js/faker";
 import prisma from "database";
 
 export async function generateMovie(
+  rentalId?: number,
   name?: string,
-  adultsOnly?: boolean,
-  rentalId?: number
+  adultsOnly?: boolean
 ) {
   const user = await prisma.movie.create({
     data: {
